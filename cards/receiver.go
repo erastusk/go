@@ -27,3 +27,9 @@ func newCard() string {
 
 // 1. Receivers are access like methods with a .
 // 2. Functions with no receivers are called with args.
+
+// Your can do the same things with traditional functions vs Receivers, when do you use either?
+// If passing structs, its size determines which one to use. If small, normal functions can be used.
+// 			the overhead when a new copy of the struct is created when passed is ok
+// However if too large, your better off using receiver pointers and change the original struct without creating
+//			a copy.

@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
+
+func index_handler(w http.ResponseWriter, r *http.Request) {
+	// frprint uses response writer to output contents
+	fmt.Fprint(w, "Home Route")
+}
+func about_handler(w http.ResponseWriter, r *http.Request) {
+	// frprint uses response writer to output contents
+	fmt.Fprint(w, "about Route")
+}
+
+func main() {
+	http.HandleFunc("/", index_handler)
+	http.HandleFunc("/about", about_handler)
+	http.ListenAndServe(":8080", nil)
+
+}
